@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String   @id @default(nanoid()) @map("_id")
+  email    String   @unique
+  name     String?  @unique
+  password String
+  image    String
+}
+
+model GymManager {
+  id       String   @id @default(nanoid()) @map("_id")
+  email    String   @unique
+  name     String?
+  password String
+}
+model Gym {
+  id       String   @id @default(nanoid()) @map("_id")
+  name     String
+  ownerid String
+  title    String
+  postition String[]
+  image String[]
+  rate String
+  pending Boolean @default(false)
+}
