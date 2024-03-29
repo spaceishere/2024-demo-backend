@@ -1,8 +1,3 @@
-import Link from "next/link";
-import { useState } from "react";
-import axios from "axios";
-import { useRouter } from "next/router";
-
 const Signup = () => {
   return (
     <div className="w-full h-screen  flex flex-col justify-center items-center px-[100px] gap-10" style={{ backgroundColor: "#090520" }}>
