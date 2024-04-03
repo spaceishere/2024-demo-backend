@@ -22,7 +22,15 @@ export const getGym = async (id: string) => {
   }
 };
 
-export const registerGym = async (input: { name: string; title: string; ownerid: string; postition: string[]; image: string[]; rate: string }) => {
+export const registerGym = async (input: {
+  name: string;
+  title: string;
+  ownerid: string;
+  postition: string[];
+  image: string[];
+  rate: string;
+  thumbnail: string;
+}) => {
   try {
     const result = await prisma.gym.create({ data: input });
     return result;

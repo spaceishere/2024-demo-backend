@@ -28,6 +28,7 @@ model Gym {
   title    String
   postition String[]
   image String[]
+  thumbnail String
   rate String
   pending Boolean @default(false)
 }

@@ -10,6 +10,7 @@ export const gymTypeDefs = gql`
     image: [String!]!
     rate: String!
     pending: Boolean!
+    thumbnail: String!
   }
 
   input GymRegisterInput {
@@ -19,6 +20,7 @@ export const gymTypeDefs = gql`
     postition: [String!]!
     image: [String!]!
     rate: String!
+    thumbnail: String!
   }
 
   input GymDeleteInput {
