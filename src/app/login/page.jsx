@@ -37,10 +37,9 @@ const Login = () => {
         },
       },
       onCompleted: (data) => {
-        console.log(data);
         setUser({
-          username: data?.LoginManager?.manager.name,
-          user_id: data?.LoginManager?.manager.id,
+          username: data?.loginManager?.manager.name,
+          user_id: data?.loginManager?.manager.id,
         });
         alert("login succelful");
         router.push("/addPost");
