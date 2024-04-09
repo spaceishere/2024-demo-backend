@@ -19,8 +19,8 @@ const CREATE_GYM = gql`
   }
 `;
 
+const { user } = useContext(UserContext);
 export default function addPost() {
-  const { user } = useContext(UserContext);
   const [CreateGym, { data: createdData, loading: createLoading, error: createError }] = useMutation(CREATE_GYM);
   const uploadimg = "https://i.ibb.co/h1v2j5g/Screen-Shot-2023-05-17-at-19-30-05.png";
   const [name, setName] = useState("");
