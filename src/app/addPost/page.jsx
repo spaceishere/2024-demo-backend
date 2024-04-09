@@ -19,8 +19,8 @@ const CREATE_GYM = gql`
   }
 `;
 
-const { user } = useContext(UserContext);
 export default function addPost() {
+  const { user } = useContext(UserContext);
   const [CreateGym, { data: createdData, loading: createLoading, error: createError }] = useMutation(CREATE_GYM);
   const uploadimg = "https://i.ibb.co/h1v2j5g/Screen-Shot-2023-05-17-at-19-30-05.png";
   const [name, setName] = useState("");
@@ -101,17 +101,8 @@ export default function addPost() {
               />
             </div>
           </div>
+
           <div className="w-[100%] flex flex-col gap-[20px] items-center">
-            <p className="text-[white] text-[45px] font-bold px-[10%]">Create a new merch</p>
-            <div className="w-[80%]  rounded-[12px] h-[670px] border-dashed border-2 border-sky-500 bg-[#15122A] relative">
-              <img src={uploadimg} className="absolute w-[99%] h-[99%]  object-cover object-center top-0 left-0 ml-[4px]" />
-            </div>
-          </div>
-          <p className="text-[white] text-[45px] font-bold px-[10%]">Create a new merch</p>
-          <div className="w-[100%] flex flex-col gap-[20px] items-center">
-            <div className="w-[80%] rounded-[12px] h-[670px] border-dashed border-2 border-sky-500 bg-[#15122A] relative">
-              <img src={uploadimg} className="absolute w-[99%] h-[99%]  object-cover object-center top-0 left-0 ml-[4px]" />
-            </div>
             <button className="w-[500px] h-[60px] bg-transparent border-2 border-sky-500 border-dashed rounded-[10px]" onClick={handleCreate}>
               add new Gym
             </button>
@@ -122,3 +113,14 @@ export default function addPost() {
     </div>
   );
 }
+// <div className="w-[80%] rounded-[12px] h-[670px] border-dashed border-2 border-sky-500 bg-[#15122A] relative">
+//               <img src={uploadimg} className="absolute w-[99%] h-[99%]  object-cover object-center top-0 left-0 ml-[4px]" />
+//             </div>
+
+//  <p className="text-[white] text-[45px] font-bold px-[10%]">Create a new merch</p>
+//       <div className="w-[100%] flex flex-col gap-[20px] items-center">
+//         <p className="text-[white] text-[45px] font-bold px-[10%]">Create a new merch</p>
+//         <div className="w-[80%]  rounded-[12px] h-[670px] border-dashed border-2 border-sky-500 bg-[#15122A] relative">
+//           <img src={uploadimg} className="absolute w-[99%] h-[99%]  object-cover object-center top-0 left-0 ml-[4px]" />
+//         </div>
+//       </div>;
