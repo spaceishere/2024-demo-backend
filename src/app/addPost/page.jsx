@@ -38,14 +38,13 @@ export default function AddPost() {
   const uploadImage = async () => {
     if (image) {
       const data = new FormData();
-      // @ts-ignore
       data.append("file", {
         name: "image",
         type: image.type,
         uri: image.uri,
       });
 
-      fetch(`https://full-backend-six.vercel.app/api/file/upload`, {
+      fetch(`https://2024-demo-backend-3tq4.vercel.app/api/file/upload`, {
         method: "POST",
         body: data,
       })
@@ -53,7 +52,7 @@ export default function AddPost() {
         .then((response) => {
           console.log("response", response);
         })
-        .catch((error: unknown) => {
+        .catch((error) => {
           console.log(JSON.stringify(error, null, 2));
         });
     }
