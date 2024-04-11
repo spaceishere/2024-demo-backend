@@ -34,6 +34,31 @@ export default function AddPost() {
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSffDMJq1zhSTfHzUPwS7XIuM5a8xW_w8K3iA&s",
   ]);
   const [thumbnail, setThumbnail] = useState("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPY1AdZ9K2TNI8Lwa5Gi4gn6Bb2zTMLj34Ag&s");
+
+  const uploadImage = async () => {
+    if (image) {
+      const data = new FormData();
+      // @ts-ignore
+      data.append("file", {
+        name: "image",
+        type: image.type,
+        uri: image.uri,
+      });
+
+      fetch(`https://full-backend-six.vercel.app/api/file/upload`, {
+        method: "POST",
+        body: data,
+      })
+        .then((response) => response.json())
+        .then((response) => {
+          console.log("response", response);
+        })
+        .catch((error: unknown) => {
+          console.log(JSON.stringify(error, null, 2));
+        });
+    }
+  };
+
   const handleCreate = () => {
     CreateGym({
       variables: {
