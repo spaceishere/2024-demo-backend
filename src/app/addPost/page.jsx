@@ -34,6 +34,7 @@ export default function AddPost() {
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSffDMJq1zhSTfHzUPwS7XIuM5a8xW_w8K3iA&s",
   ]);
   const [thumbnail, setThumbnail] = useState("");
+  const [thumbnailURl, setThumbnailURL] = useState("");
 
   const uploadImage = async () => {
     console.log("1");
@@ -48,6 +49,7 @@ export default function AddPost() {
         .then((response) => {
           console.log("3");
           console.log("response", response);
+          setThumbnailURL(response.url);
         })
         .catch((error) => {
           console.log(JSON.stringify(error, null, 2));
@@ -64,7 +66,7 @@ export default function AddPost() {
           title,
           postition: [postition_x, postition_y],
           rate: "10",
-          thumbnail,
+          thumbnail: thumbnailURl,
           image,
         },
       },
@@ -79,7 +81,7 @@ export default function AddPost() {
   };
 
   return (
-    <div className="w-full  pt-[150px]  bg-[#15122A] pb-[120px]  flex ">
+    <div className="w-full  pt-[1550px]  bg-[#15122A] pb-[120px]  flex ">
       <div className="w-[15%]"></div>
       <div className="w-[100%] flex ">
         <div className="w-[100%]  flex flex-col  gap-[20px] ">
