@@ -29,7 +29,7 @@
     ".next/types/**/*.ts",
     "src/app/Login/index.jsx",
     "src/app/page.jsx",
-    "src/app/addPost/page.jsx"
+    "src/app/addPost/page.tsx"
   ],
   "exclude": ["node_modules"]
 }
